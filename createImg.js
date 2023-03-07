@@ -6,13 +6,15 @@ function createImg(username) {
     return path.join(__dirname, "/fonts/", name);
   }
 
+  const name = username.split(" ");
+
   Canvas.registerFont(fontFile("Tangerine_Bold.ttf"), {
     family: "EBGaramond",
   });
 
   var Image = Canvas.Image;
   var img = new Image();
-  img.src = "img/img.jpg";
+  img.src = "img/5889107.jpg";
 
   var canvas = Canvas.createCanvas(img.width, img.height);
   var ctx = canvas.getContext("2d");
@@ -21,14 +23,25 @@ function createImg(username) {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   console.log(img.width);
 
-  ctx.fillStyle = "#6e7663";
-  ctx.textAlign = "left";
+  console.log(name);
+  if (name.length > 1) {
+    ctx.fillStyle = "#6e7663";
+    ctx.textAlign = "left";
 
-  ctx.font = "120pt EBGaramond";
-  ctx.fillText(username, 570, 290);
+    ctx.font = "100pt EBGaramond";
+    ctx.fillText(name[0], 550, 280);
+    ctx.fillText(name[1], 550 + name[0].length * 40, 360);
+  } else {
+    ctx.fillStyle = "#6e7663";
+    ctx.textAlign = "left";
+
+    ctx.font = "120pt EBGaramond";
+    ctx.fillText(name[0], 620, 310);
+    // ctx.fillText(name[1], 550 + name[0].length * 40, 370);
+  }
+
   ctx.fillStyle = "#6e7663";
   ctx.textAlign = "right";
-
   ctx.font = "20pt Arial";
   ctx.fillText(
     "Rasm @tabrik_bayrambot bot orqali tayyorlandi",
