@@ -7,7 +7,7 @@ const bot = new Telegraf(process.env.TOKEN);
 // console.log(process.env.TOKEN);
 
 const helpMessage = `
-Ushbu bot orqali qadrdonlaringizni ismlarni yozib tabrik so'z yozishigiz mumkin !!!
+Ushbu bot orqali qadrdonlaringizni ismlariga tabrik so'z yozishigiz mumkin!!!
 
 Boshlash uchun shunchaki menga ism yozing.
 Misol uchun /Aziza
